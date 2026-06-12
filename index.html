@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIFA World Cup Matches</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:#333;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.match{
+    background:white;
+    margin:10px 0;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.teams{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.info{
+    margin-top:8px;
+    color:#666;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>FIFA World Cup 2026 Match Schedule</h1>
+
+    <div id="matches"></div>
+</div>
+
+<script>
+
+// উদাহরণ ম্যাচ
+const matches = [
+    {
+        team1:"Mexico",
+        team2:"South Africa",
+        date:"11 June 2026",
+        venue:"Mexico City"
+    },
+    {
+        team1:"South Korea",
+        team2:"Czechia",
+        date:"11 June 2026",
+        venue:"Guadalajara"
+    },
+
+    // এখানে বাকি ১০২টি ম্যাচ যোগ করবেন
+];
+
+const container = document.getElementById("matches");
+
+matches.forEach(match => {
+    container.innerHTML += `
+        <div class="match">
+            <div class="teams">
+                ${match.team1} VS ${match.team2}
+            </div>
+            <div class="info">
+                📅 ${match.date}<br>
+                📍 ${match.venue}
+            </div>
+        </div>
+    `;
+});
+
+</script>
+
+</body>
+</html>
